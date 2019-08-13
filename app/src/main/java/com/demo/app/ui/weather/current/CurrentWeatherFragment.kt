@@ -32,7 +32,7 @@ class CurrentWeatherFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        updateLocation(getString(R.string.location))
         loadData()
 
     }
@@ -58,7 +58,6 @@ class CurrentWeatherFragment : Fragment() {
         updatePrecipitation(it.precipMm)
         updateWind(it.windDir, it.windKph)
         updateVisibility(it.visKm)
-        updateLocation("Podgorica")
 
         Picasso.with(context)
             .load("https:${it.condition.icon}")
